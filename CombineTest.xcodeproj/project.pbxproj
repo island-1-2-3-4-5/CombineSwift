@@ -13,6 +13,7 @@
 		B04817DC270D9F690093AFD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B04817DB270D9F690093AFD4 /* Assets.xcassets */; };
 		B04817DF270D9F690093AFD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B04817DD270D9F690093AFD4 /* LaunchScreen.storyboard */; };
 		B04817E7270DA5250093AFD4 /* ConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04817E6270DA5250093AFD4 /* ConstraintExtension.swift */; };
+		B04817E9270DB4E30093AFD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04817E8270DB4E30093AFD4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B04817DE270D9F690093AFD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B04817E0270D9F690093AFD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B04817E6270DA5250093AFD4 /* ConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintExtension.swift; sourceTree = "<group>"; };
+		B04817E8270DB4E30093AFD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B04817D2270D9F660093AFD4 /* AppDelegate.swift */,
 				B04817D4270D9F660093AFD4 /* SceneDelegate.swift */,
 				B04817D6270D9F660093AFD4 /* MainViewController.swift */,
+				B04817E8270DB4E30093AFD4 /* Constants.swift */,
 				B04817E6270DA5250093AFD4 /* ConstraintExtension.swift */,
 				B04817DB270D9F690093AFD4 /* Assets.xcassets */,
 				B04817DD270D9F690093AFD4 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04817E9270DB4E30093AFD4 /* Constants.swift in Sources */,
 				B04817D7270D9F660093AFD4 /* MainViewController.swift in Sources */,
 				B04817D3270D9F660093AFD4 /* AppDelegate.swift in Sources */,
 				B04817E7270DA5250093AFD4 /* ConstraintExtension.swift in Sources */,
