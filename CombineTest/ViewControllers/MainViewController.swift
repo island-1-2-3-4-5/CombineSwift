@@ -56,14 +56,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
-        setPublisher()
+        setSubscriber()
     }
     
     
     
     //MARK: Functions
     
-    private func setPublisher() {
+    private func setSubscriber() {
         switchSubscriber = $canMakePost.receive(on: DispatchQueue.main)
             .assign(to: \.isEnabled, on: makePostButton)
     }
