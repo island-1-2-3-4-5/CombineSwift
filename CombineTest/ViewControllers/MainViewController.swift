@@ -57,26 +57,6 @@ class MainViewController: UIViewController {
     
     
     //MARK: Functions
-    
-    private func setSubscriber() {
-        switchSubscriber = $canMakePost.receive(on: DispatchQueue.main)
-            .assign(to: \.isEnabled, on: makePostButton) //makePostButton - объект который изменяется когда switchSubscriber видит изменения в canMakePost
-        
-        // тот за кем следим
-        let blogPostPublisher = NotificationCenter.Publisher(center: .default, name: .newPost, object: nil).map( {
-            (notification) -> String? in
-            return (notification.object as? BlogPost)?.title ?? ""
-        })
-        
-        // тот за кем следим
-        /// хочу чтобы postLabel менял текст
-        let postLabelSubscriber = Subscribers.Assign(object: postLabel, keyPath: \.text)
-        
-        // теперь надо подписаться под что-то, но передаваемый объект должен быть конвертирован с помощью операторов
-        blogPostPublisher.subscribe(postLabelSubscriber)
-    }
-    
-    
     private func setViews() {
         view.backgroundColor = .white
         view.addSubviews(toggle, titlleLabel, makePostButton, postLabel)
@@ -117,7 +97,27 @@ class MainViewController: UIViewController {
         )
     }
     
+    private func setSubscriber() {
+        switchSubscriber = $canMakePost.receive(on: DispatchQueue.main)
+            .assign(to: \.isEnabled, on: makePostButton) //makePostButton - объект который изменяется когда switchSubscriber видит изменения в canMakePost
         
+        // тот за кем следим
+        let blogPostPublisher = NotificationCenter.Publisher(center: .default, name: .newPost, object: nil).map( {
+            (notification) -> String? in
+            return (notification.object as? BlogPost)?.title ?? ""
+        })
+        
+        // тот за кем следим
+        
+        /// хочу чтобы postLabel менял текст
+        let postLabelSubscriber = Subscribers.Assign(object: postLabel, keyPath: \.text)
+        
+        // теперь надо подписаться под что-то, но передаваемый объект должен быть конвертирован с помощью операторов
+        blogPostPublisher.subscribe(postLabelSubscriber)
+    }
+    
+    
+    
     //MARK: - Actions
     @objc func toggleAction(_ sender: UISwitch) {
         canMakePost = sender.isOn
@@ -126,10 +126,8 @@ class MainViewController: UIViewController {
     
     
     @objc func buttonAction(_ sender: UIButton) {
-        
         let blogPost = BlogPost(title: "new Post\nThe currentTime is \(Date())", url: URL(string: "SomeURL")!)
         NotificationCenter.default.post(name: .newPost, object: blogPost)
     }
-    
 }
 

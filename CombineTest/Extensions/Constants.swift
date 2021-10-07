@@ -21,8 +21,5 @@ struct Constants {
         static let titlleLabel = "Accept Terms?"
         static let makePostButton = "Make a Post"
         static let postLabel = "..."
-        
     }
-    
-    
 }
