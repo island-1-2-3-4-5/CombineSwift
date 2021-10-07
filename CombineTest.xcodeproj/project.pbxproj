@@ -14,6 +14,8 @@
 		B04817DF270D9F690093AFD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B04817DD270D9F690093AFD4 /* LaunchScreen.storyboard */; };
 		B04817E7270DA5250093AFD4 /* ConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04817E6270DA5250093AFD4 /* ConstraintExtension.swift */; };
 		B04817E9270DB4E30093AFD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04817E8270DB4E30093AFD4 /* Constants.swift */; };
+		B05B23CA270EE037008424FF /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05B23C9270EE037008424FF /* Notification+Extension.swift */; };
+		B05B23CC270EE07F008424FF /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05B23CB270EE07F008424FF /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		B04817E0270D9F690093AFD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B04817E6270DA5250093AFD4 /* ConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintExtension.swift; sourceTree = "<group>"; };
 		B04817E8270DB4E30093AFD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B05B23C9270EE037008424FF /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		B05B23CB270EE07F008424FF /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			children = (
 				B04817E8270DB4E30093AFD4 /* Constants.swift */,
 				B04817E6270DA5250093AFD4 /* ConstraintExtension.swift */,
+				B05B23C9270EE037008424FF /* Notification+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				B04817D6270D9F660093AFD4 /* MainViewController.swift */,
+				B05B23CB270EE07F008424FF /* MainModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 			files = (
 				B04817E9270DB4E30093AFD4 /* Constants.swift in Sources */,
 				B04817D7270D9F660093AFD4 /* MainViewController.swift in Sources */,
+				B05B23CA270EE037008424FF /* Notification+Extension.swift in Sources */,
+				B05B23CC270EE07F008424FF /* MainModel.swift in Sources */,
 				B04817D3270D9F660093AFD4 /* AppDelegate.swift in Sources */,
 				B04817E7270DA5250093AFD4 /* ConstraintExtension.swift in Sources */,
 				B04817D5270D9F660093AFD4 /* SceneDelegate.swift in Sources */,

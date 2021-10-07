@@ -8,11 +8,12 @@
 import UIKit
 import Combine
 
+
 class MainViewController: UIViewController {
     
     //MARK: Properties
-    @Published var canMakePost: Bool = false
-    private var switchSubscriber: AnyCancellable?
+    @Published var canMakePost: Bool = false // приставка позволяет быть отслеживаемой - то за чем мы следим
+    private var switchSubscriber: AnyCancellable? // объект который следит
     
     //MARK: UI
     private let toggle: UISwitch = {
@@ -59,7 +60,20 @@ class MainViewController: UIViewController {
     
     private func setSubscriber() {
         switchSubscriber = $canMakePost.receive(on: DispatchQueue.main)
-            .assign(to: \.isEnabled, on: makePostButton)
+            .assign(to: \.isEnabled, on: makePostButton) //makePostButton - объект который изменяется когда switchSubscriber видит изменения в canMakePost
+        
+        // тот за кем следим
+        let blogPostPublisher = NotificationCenter.Publisher(center: .default, name: .newPost, object: nil).map( {
+            (notification) -> String? in
+            return (notification.object as? BlogPost)?.title ?? ""
+        })
+        
+        // тот за кем следим
+        /// хочу чтобы postLabel менял текст
+        let postLabelSubscriber = Subscribers.Assign(object: postLabel, keyPath: \.text)
+        
+        // теперь надо подписаться под что-то, но передаваемый объект должен быть конвертирован с помощью операторов
+        blogPostPublisher.subscribe(postLabelSubscriber)
     }
     
     
@@ -112,7 +126,9 @@ class MainViewController: UIViewController {
     
     
     @objc func buttonAction(_ sender: UIButton) {
-        print(sender.titleLabel?.text)
+        
+        let blogPost = BlogPost(title: "new Post\nThe currentTime is \(Date())", url: URL(string: "SomeURL")!)
+        NotificationCenter.default.post(name: .newPost, object: blogPost)
     }
     
 }
