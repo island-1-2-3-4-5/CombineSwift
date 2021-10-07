@@ -16,6 +16,7 @@
 		B04817E9270DB4E30093AFD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04817E8270DB4E30093AFD4 /* Constants.swift */; };
 		B05B23CA270EE037008424FF /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05B23C9270EE037008424FF /* Notification+Extension.swift */; };
 		B05B23CC270EE07F008424FF /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05B23CB270EE07F008424FF /* MainModel.swift */; };
+		B05B23CE270EF1D8008424FF /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05B23CD270EF1D8008424FF /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B04817E8270DB4E30093AFD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B05B23C9270EE037008424FF /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		B05B23CB270EE07F008424FF /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		B05B23CD270EF1D8008424FF /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +64,10 @@
 		B04817D1270D9F660093AFD4 /* CombineTest */ = {
 			isa = PBXGroup;
 			children = (
-				B04817EA270DD1C90093AFD4 /* Delegates */,
+				B05B23D0270EF793008424FF /* WeatherService */,
 				B04817EC270DD2210093AFD4 /* ViewControllers */,
 				B04817EB270DD1E20093AFD4 /* Extensions */,
+				B04817EA270DD1C90093AFD4 /* Delegates */,
 				B04817DB270D9F690093AFD4 /* Assets.xcassets */,
 				B04817ED270DD2440093AFD4 /* Other */,
 			);
@@ -106,6 +109,14 @@
 				B04817DD270D9F690093AFD4 /* LaunchScreen.storyboard */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		B05B23D0270EF793008424FF /* WeatherService */ = {
+			isa = PBXGroup;
+			children = (
+				B05B23CD270EF1D8008424FF /* Weather.swift */,
+			);
+			path = WeatherService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05B23CE270EF1D8008424FF /* Weather.swift in Sources */,
 				B04817E9270DB4E30093AFD4 /* Constants.swift in Sources */,
 				B04817D7270D9F660093AFD4 /* MainViewController.swift in Sources */,
 				B05B23CA270EE037008424FF /* Notification+Extension.swift in Sources */,

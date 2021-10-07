@@ -121,11 +121,12 @@ class MainViewController: UIViewController {
     //MARK: - Actions
     @objc func toggleAction(_ sender: UISwitch) {
         canMakePost = sender.isOn
-        print(canMakePost)
     }
     
     
     @objc func buttonAction(_ sender: UIButton) {
+        let combine = Weather()
+        combine.test()
         let blogPost = BlogPost(title: "new Post\nThe currentTime is \(Date())", url: URL(string: "SomeURL")!)
         NotificationCenter.default.post(name: .newPost, object: blogPost)
     }
