@@ -20,8 +20,6 @@ class MainViewController: UIViewController {
         toggle.addTarget(self, action: #selector(toggleAction), for: .valueChanged)
         return toggle
     }()
-    
-    
     private let titlleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -30,8 +28,6 @@ class MainViewController: UIViewController {
         label.text = Constants.TextLabels.titlleLabel
         return label
     }()
-    
-    
     private let makePostButton: UIButton = {
         let button = UIButton()
         button.setTitle( Constants.TextLabels.makePostButton, for: .normal)
@@ -40,8 +36,6 @@ class MainViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
     }()
-    
-    
     private let postLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -71,16 +65,9 @@ class MainViewController: UIViewController {
     
     private func setViews() {
         view.backgroundColor = .white
-        view.addSubviews(
-            toggle,
-            titlleLabel,
-            makePostButton,
-            postLabel
-        )
-        
+        view.addSubviews(toggle, titlleLabel, makePostButton, postLabel)
         layoutViews()
     }
-    
     
     fileprivate func layoutViews() {
         toggle.anchor(
@@ -116,7 +103,7 @@ class MainViewController: UIViewController {
         )
     }
     
-    
+        
     //MARK: - Actions
     @objc func toggleAction(_ sender: UISwitch) {
         canMakePost = sender.isOn
