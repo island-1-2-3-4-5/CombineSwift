@@ -161,8 +161,8 @@
 		B0D18F8E2754F8E90042FCB1 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				B0D18F912754F9F40042FCB1 /* Response.swift */,
 				B0D18F932754FA4B0042FCB1 /* HTTPNetworkRequest.swift */,
+				B0D18F912754F9F40042FCB1 /* Response.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

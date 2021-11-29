@@ -83,13 +83,22 @@ private extension WeatherFetcher {
 // Реализация методов протокола
 // MARK: - WeatherFetchable
 extension WeatherFetcher: WeatherFetchable {
+    
   func weeklyWeatherForecast(forCity city: String) -> AnyPublisher<WeeklyForecastResponse, WeatherError> {
     return forecast(with: makeWeeklyForecastComponents(withCity: city)) // forecast принимает URLComponents, а функция makeWeeklyForecastComponents их возвращает, значит ее можно передать как вычисляемое свойство
   }
+    
+    
+    
+    
 
   func currentWeatherForecast(forCity city: String) -> AnyPublisher<CurrentWeatherForecastResponse, WeatherError> {
     return forecast(with: makeCurrentDayForecastComponents(withCity: city))
   }
+    
+    
+    
+    
 
   // возвращает какой-то объект подписанный под протокол Decodable, либо ошибку
   private func forecast<T>(with components: URLComponents) -> AnyPublisher<T, WeatherError> where T: Decodable {
